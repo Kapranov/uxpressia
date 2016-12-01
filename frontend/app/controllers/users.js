@@ -39,12 +39,12 @@ const users = [
 ];
 
 const countries = [
-  { name: 'United States', code: 'US', population: 321853000 },
-  { name: 'Spain', code: 'ES', population: 46439864 },
-  { name: 'Portugal', code: 'PT', population: 10374822 },
-  { name: 'Ukraine', code: 'UA', population: 46588880 },
-  { name: 'Latvia', code: 'LV', population: 1978300 },
-  { name: 'Brazil', code: 'BR', population: 204921000 },
+  { name: 'United States',  code: 'US', population: 321853000 },
+  { name: 'Spain',          code: 'ES', population: 46439864 },
+  { name: 'Portugal',       code: 'PT', population: 10374822 },
+  { name: 'Ukraine',        code: 'UA', population: 46588880 },
+  { name: 'Latvia',         code: 'LV', population: 1978300 },
+  { name: 'Brazil',         code: 'BR', population: 204921000 },
   { name: 'United Kingdom', code: 'GB', population: 64596752 },
 ];
 
@@ -52,8 +52,8 @@ export default Ember.Controller.extend({
   queryParams: ['sortProperties', 'sortAscending', 'pageNumber', 'pageSize', 'columnsUsed'],
   sortProperties: ['name'],
   sortAscending: true,
-  arrangedContent: Ember.computed('model', 'sortProperties', 'sortAscending', function(){
-    return this.get('model').toArray().sort((a, b)=> {
+  arrangedContent: Ember.computed('model.tableOfUsers', 'sortProperties', 'sortAscending', function(){
+    return this.get('model.tableOfUsers').toArray().sort((a, b)=> {
       let sortProperty = this.get('sortProperties')[0];
       if(this.get('sortAscending')){
         return Ember.compare(a.get(sortProperty), b.get(sortProperty));
@@ -64,7 +64,7 @@ export default Ember.Controller.extend({
   }),
 
   usersCount: function(){
-    return this.get('model.length');
+    return this.get('model.tableOfUsers.length');
   }.property('@each'),
 
   countries,

@@ -8,7 +8,7 @@
       {{#if isExpanded}}
         <button {{action "toggleBody"}}>Hide Users</button>
         <div class="body">
-          {{#each model as |user|}}
+          {{#each model.tableOfUsers as |user|}}
             <li>{{user.name}}</li>
           {{else}}
             <li>no users… :-(</li>
@@ -18,6 +18,15 @@
         <button {{action "toggleBody"}}>Show Users</button>
       {{/if}}
     </ul>
+    <hr>
+    <div class="col-xs-12 text-left">
+      <h3>Users:</h3>
+      {{#each model.tableOfUsers key='id' as |event|}}
+        <h2 data-id={{event.id}}>{{event.name}}</h2>
+        {{event.bio}}
+        <hr>
+      {{/each}}
+    </div>
   </div>
   <div class="col-xs-6 options text-left">
     <h3>Ember Power Select Typeahead</h3>
