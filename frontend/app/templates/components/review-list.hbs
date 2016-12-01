@@ -1,0 +1,19 @@
+{{!#each reviews as |review|}}
+{{#each sortedReviews as |review|}}
+  <li>
+    <h3>{{review.name}} - {{review.email}} out of emails</h3>
+    <p>{{review.bio}}</p>
+    <p>by {{review.avatarUrl}} on {{review.createdAt}}</p>
+  </li>
+{{/each}}
+
+<div>
+  Sort by
+  {{radio-button value='date' groupValue=sortBy}} Date
+  {{radio-button value='rating' groupValue=sortBy}} Rating
+  {{radio-button value='username' groupValue=sortBy}} User
+</div>
+
+<div>
+  {{input type='checkbox' checked=reverseSort}} Reverse sort
+</div>

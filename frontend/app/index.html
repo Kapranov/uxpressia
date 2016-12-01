@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Frontend</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Add to Home">
+
+    {{content-for "head"}}
+
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/frontend.css">
+    <!-- ICONS -->
+
+    <!-- iPad retina icon -->
+    <link href="https://placehold.it/152"
+          sizes="152x152"
+          rel="apple-touch-icon-precomposed">
+
+    <!-- iPad retina icon (iOS < 7) -->
+    <link href="https://placehold.it/144"
+          sizes="144x144"
+          rel="apple-touch-icon-precomposed">
+
+    <!-- iPad non-retina icon -->
+    <link href="https://placehold.it/76"
+          sizes="76x76"
+          rel="apple-touch-icon-precomposed">
+
+    <!-- iPad non-retina icon (iOS < 7) -->
+    <link href="https://placehold.it/72"
+          sizes="72x72"
+          rel="apple-touch-icon-precomposed">
+
+    <!-- iPhone 6 Plus icon -->
+    <link href="https://placehold.it/180"
+          sizes="120x120"
+          rel="apple-touch-icon-precomposed">
+
+    <!-- iPhone retina icon (iOS < 7) -->
+    <link href="https://placehold.it/114"
+          sizes="114x114"
+          rel="apple-touch-icon-precomposed">
+
+    <!-- iPhone non-retina icon (iOS < 7) -->
+    <link href="https://placehold.it/57"
+          sizes="57x57"
+          rel="apple-touch-icon-precomposed">
+
+    {{content-for "head-footer"}}
+  </head>
+  <body class="skin-blue fixed" data-spy="scroll" data-target="#scrollspy">
+    {{content-for "body"}}
+
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/frontend.js"></script>
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js" id="twitter-wjs"></script>
+
+    {{content-for "body-footer"}}
+  </body>
+</html>

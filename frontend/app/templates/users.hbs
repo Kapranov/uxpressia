@@ -1,0 +1,87 @@
+<div class="menu-top clear-both text-center">
+  <h1>Users Page</h1>
+</div>
+<div class="container">
+  <div class="col-xs-6 animations text-right">
+    <h3>The list users: {{usersCount}}</h3>
+    <ul class="users-listing">
+      {{#if isExpanded}}
+        <button {{action "toggleBody"}}>Hide Users</button>
+        <div class="body">
+          {{#each model as |user|}}
+            <li>{{user.name}}</li>
+          {{else}}
+            <li>no users… :-(</li>
+          {{/each}}
+        </div>
+      {{else}}
+        <button {{action "toggleBody"}}>Show Users</button>
+      {{/if}}
+    </ul>
+  </div>
+  <div class="col-xs-6 options text-left">
+    <h3>Ember Power Select Typeahead</h3>
+    <p><input type="text" placeholder="Tab target"></p>
+    {{#power-select-typeahead
+      search=(action 'searchUsersAsync')
+      selected=user
+      onchange=(action (mut user))
+      extra=(hash labelPath="name") as |user|}}
+      {{user.name}}
+    {{/power-select-typeahead}}
+    <h3>Typeahead with minimum search length stabished to 3 chars</h3>
+    {{#power-select-typeahead search=(action 'searchUsersAsync')
+      selected=user2
+      oninput=(action "skipShortSearches")
+      onchange=(action (mut user2))
+      extra=(hash labelPath="name")
+      as |user|}}
+      {{user.name}}
+    {{/power-select-typeahead}}
+    <h3>Typeahead with non-async search</h3>
+    {{#power-select-typeahead
+      selected=user3
+      options=users
+      searchField='name'
+      onchange=(action (mut user3))
+      extra=(hash labelPath="name")
+      as |user|}}
+      {{user.name}}
+    {{/power-select-typeahead}}
+    <h3>Options are strings</h3>
+    {{#power-select options=numbers mustFallback=mustFallback selected=number onchange=(action (mut number)) as |num|}}
+      {{num}}
+    {{/power-select}}
+    <h3>Options are objects</h3>
+    {{#power-select options=users mustFallback=mustFallback selected=user onchange=(action (mut user)) labelPath="name" as |user|}}
+    {{user.name}}
+    {{/power-select}}
+    <h3>Default behaviour</h3>
+    {{#power-select-with-create
+      options=countries
+      searchField="name"
+      selected=selectedCountry
+      onchange=(action (mut selectedCountry))
+      oncreate=(action "createCountry") as |country term|
+    }}
+      {{country.name}}
+    {{/power-select-with-create}}
+    <br>
+    <br>
+    <br>
+    <h3>With custom Add message</h3>
+    {{#power-select-with-create
+      options=countries
+      searchField="name"
+      selected=selectedCountry
+      onchange=(action (mut selectedCountry))
+      oncreate=(action "createCountry")
+      buildSuggestion=capitalizeSuggestion as |country term|
+    }}
+      {{country.name}}
+    {{/power-select-with-create}}
+    <br>
+    <br>
+    <br>
+  </div>
+</div>

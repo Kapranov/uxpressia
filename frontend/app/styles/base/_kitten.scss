@@ -1,0 +1,115 @@
+// Cool
+$aqua:    #7FDBFF;
+$blue:    #0074D9;
+$navy:    #001F3F;
+$teal:    #39CCCC;
+$green:   #2ECC40;
+$olive:   #3D9970;
+$lime:    #01FF70;
+
+// Warm
+$yellow:  #FFDC00;
+$orange:  #FF851B;
+$red:     #FF4136;
+$fuchsia: #F012BE;
+$purple:  #B10DC9;
+$maroon:  #85144B;
+
+// Gray
+$white:   #fff;
+$silver:  #ddd;
+$gray:    #aaa;
+$black:   #111;
+
+h1.title {
+  font-size: 2.5em;
+}
+
+.entered-viewport {
+  background: $white;
+  border-color: lighten($green, 20%);
+  header {
+    transition: all 0.1s ease-out;
+    color: $black;
+  }
+  &:hover {
+    border-color: $green;
+  }
+}
+
+.kittenCard-container {
+  &.active {
+    .kittenCard {
+      background: #fdc61d;
+    }
+    .kittenCard-avatar {
+      opacity: 1;
+    }
+    .kittenCard-title {
+      // color: black
+    }
+  }
+}
+
+.kittenCard {
+  padding: 20px;
+  border: 2px solid #fdc61d;
+  min-height: 400px;
+
+  &-title {
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+    transition: all 0.2s ease-out;
+  }
+  &-avatar {
+    opacity: 0.5;
+    width: 100%;
+    transition: opacity 0.1s ease-in-out;
+  }
+}
+
+.kitten-counter {
+  padding: 10px 10px;
+  z-index: 10000;
+  text-align: center;
+}
+
+.dog-card {
+  -moz-transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 3px solid #dddddd;
+  min-height: 400px;
+  background: #f7f7f7;
+  margin-bottom: 2em;
+  padding: 5px 20px;
+}
+
+.dog-card header {
+  color: #aaaaaa;
+}
+
+.dog-card-description {
+  color: #aaaaaa;
+  font-size: 1.25em;
+}
+
+.entered-viewport {
+  background: white;
+  border-color: #7ee289;
+}
+
+.entered-viewport header {
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  color: #111111;
+}
+
+.entered-viewport:hover {
+  border-color: #2ecc40;
+}

@@ -1,0 +1,154 @@
+<div class="wrapper">
+  {{application-header}}
+  {{application-sidebar}}
+  <div class="content-wrapper">
+    <div class="content body">
+
+      {{#each flashMessages.queue as |flash|}}
+        {{flash-message flash=flash messageStyle='bootstrap' class='radius'}}
+      {{/each}}
+
+      {{!#each flashMessages.arrangedQueue as |flash|}}
+        {{!flash-message flash=flash messageStyle='bootstrap' class='radius'}}
+      {{!/each}}
+
+      <p>
+        Add flash messages with different types by clicking on the buttons below.
+        You can also clear all messages on screen. To remove a single message,
+        click on it.
+      </p>
+
+      <section class="content-header">
+        <h1><small></small>
+        </h1>
+        <ol class="breadcrumb">
+          <li>{{#link-to "admin-lte"}}<i class="fa fa-dashboard"></i> Home{{/link-to}}</li>
+          <li class="active">Dashboard</li>
+        </ol>
+        {{!tab-switcher tabItems=model}}
+        {{widget-box}}
+      </section>
+      <section class="content">
+        <h1>
+          {{upper-case "welcome"}} to {{appName}}{{!application.meta.total}}
+          {{twitter-share data-url="http://emberjs.com"
+                          data-text="EmberJS Components are Amazing!"
+                          data-size="large"
+                          data-hashtags="emberjs"}}
+        </h1>
+        <div class="btn-group" role="group" aria-label="...">
+          <button class="btn btn-success" {{action 'success' on='click'}}>Success</button>
+          <button class="btn btn-warning" {{action 'warning' on='click'}}>Warning</button>
+          <button class="btn btn-info" {{action 'info' on='click'}}>Info</button>
+          <button class="btn btn-danger" {{action 'danger' on='click'}}>Danger</button>
+          <button class="btn btn" {{action 'clearMessages' on='click'}}>Clear</button>
+        </div>
+        <p>
+          Adapter then automatically picks up things we’ve set as meta.
+          This allows us to access the metadata like so:
+          <!-- {{bonsais.meta.total}}  // in templates -->
+          <!-- this.get('bonsais.meta.total') // everywhere else -->
+        </p>
+        <h1>Applying background color to component</h1>
+        <p>
+          I have a toolbar component which has a list of items.
+          When I click on an element I need to add background
+          color to the clicked element. Also need to deselect
+          the previously selected item.
+        </p>
+        <p>{{toolbar-card}}</p>
+        <br>
+        <br>
+        <br>
+        <div>
+          {{my-bird}}
+          <br>
+          {{my-duck}}
+        </div>
+        {{liquid-outlet}}
+      </section>
+      <div class="animated fadeInRight">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="text-center m-t-lg">
+              <h1>Simple example of Contact page view</h1>
+              <small>Writen in contact.html file.</small>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-4 col-sm-6 col-xs-3">
+              {{#profile-box name="Question #1" color="purple" icon="fa fa-github-alt"}}text...{{/profile-box}}
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-3">
+              {{#profile-box name="Question #2" color="yellow" icon="fa fa-rebel"}}text...{{/profile-box}}
+              {{#profile-box name="Question #4" color="red" icon="fa fa-files-o"}}text...{{/profile-box}}
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-3">
+              {{#profile-box name="Question #3" color="green" icon="fa fa-comments-o"}}text...{{/profile-box}}
+              {{#profile-box name="Question #5" color="aqua" icon="fa fa-comments-o"}}text...{{/profile-box}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-sm-10">
+            <h2>
+              This is an Ember wrapper for the amazing
+              <a href="https://github.com/jessepollak/card" target="_blank" class="btn btn-info">Card</a>
+              project.
+            </h2>
+            <br>
+            <br>
+            {{credit-card}}
+          </div>
+          <div class="col-lg-1"></div>
+        </div>
+      </div>
+      <div class="animated fadeInRight">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4 text-center about-padding">
+            {{#about-box
+              email="lugatex@yahoo.com"
+              name="Oleg G.Kapranov"
+              image="../assets/images/cow.png"}}Ruby vs. Ember.js{{/about-box}}
+            {{spectrum-color-picker
+                color=teamColor
+                preferredFormat="hex"
+                showPalette=true
+                showInput=true
+                showInitial=true
+                showAlpha=true}}
+            <button {{action "toggleModal"}}>Toggle Modal</button>
+            {{#if isShowingModal}}
+              {{#modal-dialog close="toggleModal"
+                              targetAttachment='none'
+                              targetAttachment="center"
+                              container-class='custom-styles-modal-container'
+                              overlay-class='custom-styles-modal'}}
+                <h1>Stop! Modal Time!</h1>
+                <p>Custom Styles</p>
+                <button {{action 'toggleModal'}}>Close</button>
+              {{/modal-dialog}}
+            {{/if}}
+          </div>
+          <div class="col-lg-4"></div>
+        </div>
+      </div>
+      {{add-to-homescreen}}
+
+      {{#each flash in flashes.queue}}
+        {{#flash-message flash=flash}}
+          <h5>{{flash.type}}</h5>
+          <p>{{flash.message}}</p>
+        {{/flash-message}}
+      {{/each}}
+    </div>
+  </div>
+
+  {{application-footer}}
+
+</div>

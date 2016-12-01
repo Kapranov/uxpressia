@@ -1,0 +1,48 @@
+<div class="menu-top clear-both text-center">
+  <h1>Engine Page</h1>
+</div>
+<div class="container">
+  <div class="col-xs-6 animations text-center">
+    <h4>Color Names:</h4>
+    <!-- ul -->
+      {{!#each sortedItems as |item|}}
+      <!-- li>{{item.id}} - {{item.color}}</li -->
+      {{!/each}}
+    <!-- /ul -->
+    <button {{action 'makeSquare'}}>Square</button>
+    <button {{action 'makeRow'}}>Row</button>
+    <button {{action 'makeLongRect'}}>Long Rectangle</button>
+    <button {{action 'makeTallRect'}}>Tall Rectable</button>
+    <button {{action 'normal'}}>Normal</button>
+    <br>
+    <br>
+    <p>
+    Container Width:  {{containerWidth}}  <input type='range' min=100 max=550 value={{containerWidth}}  oninput={{action 'updateContainerWidth'  value='target.value'}}>
+    Container Height: {{containerHeight}} <input type='range' min=100 max=999 value={{containerHeight}} oninput={{action 'updateContainerHeight' value='target.value'}}>
+    </p>
+    <br>
+    <br>
+    <div class="text-left">
+      <div class="simple-list" style={{{concat 'position:relative;width:' containerWidth 'px;height:' containerHeight 'px;'}}}>
+        {{#ember-collection items=sortedItems buffer=10 cell-layout=(fixed-grid-layout itemWidth itemHeight) as |item index|}}
+        {{item.id}} - {{item.color}} - {{item.hex}}
+        {{/ember-collection}}
+      </div>
+    </div>
+    <hr>
+    <b>
+      Item Height: {{itemHeight}}
+      Item Width:  {{itemWidth}}
+    </b>
+  </div>
+  <div class="col-xs-6 options text-left">
+    <h4>Reviews Users:</h4>
+    {{review-list reviews=model.reviews}}
+  </div>
+</div>
+<div class="inspiration text-center">
+  <p>
+    Inspired by <a href="https://github.com/codrops/SidebarTransitions">Sidebar Transitions</a> by Codrops
+    {{my-helper "Created by" "Oleg G.Kapranov"}}
+  </p>
+</div>

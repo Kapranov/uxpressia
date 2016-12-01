@@ -1,0 +1,16 @@
+general: &general
+  ACCESS_TOKEN:       'fdd110671210f2be353995806414f9d8'
+  LOCALHOST:          'api.dev.local'
+  RACK_CORS_ORIGINS:  'localhost:4200'
+
+development:
+  <<: *general
+  SECRET_KEY_BASE: a6fd6107c46dadf0f4177455278af113107d8abe921cccaa68b1501557279894d135a86a9b8218bac47b28dbc22f33bcab1616279a6b3e6f05ed22895b09dea2
+
+test:
+  <<: *general
+  SECRET_KEY_BASE: 23361bbb71db36470e9199d1c9208da74a02516c8908a54bbf5097ad5b4bdb69d92be73b39cf31ee5db87c037c29c1f1e909fe82dfec008c138ad3d8f1351459
+
+production:
+  <<: *general
+  SECRET_KEY_BASE: f91667e3d57a9021d8ffa9965e63edf997c1051b1f0a59eda4412552b2eebc31723d84d2717d896264f6a5f390de400f4ff5c3cc7bce67f8ec2a9ce40371394d

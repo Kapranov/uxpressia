@@ -1,0 +1,42 @@
+.toolbar > li {
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  float: left;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 80px;
+}
+
+.toolbar > li:hover {
+  background: #00acd6;
+  color: #000;
+  border-radius: 4px;
+}
+
+
+.toolbar .bg-color {
+  background: #e0e0e0;
+  color: #000;
+  border-radius: 4px;
+}
+
+.toolbar .active {
+  border-radius: 4px;
+}
+
+.toolbar .red.active {
+  background-color: red;
+  border-radius: 4px;
+}
+
+.toolbar .yellow.active {
+  background-color: yellow;
+  border-radius: 4px;
+  color: #081079;
+}
+
+.blue.active {
+  background-color: blue;
+  border-radius: 4px;
+}

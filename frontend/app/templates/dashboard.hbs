@@ -1,0 +1,53 @@
+<div class="menu-top clear-both text-center">
+  <h1>Dashboard Page</h1>
+</div>
+<div class="container">
+  <div class="col-xs-6 animations text-right">
+    <h4>List of Widgets</h4>
+    <ul>
+      {{!#each model as |dashboard|}}
+        <!-- li>{{dashboard}}</li -->
+      {{!/each}}
+    </ul>
+    <h4>List of Fruits</h4>
+    {{fruit-list fruit="apple cherry orange grape"}}<br><br>
+    {{fruit-list fruit="bannana kiwi peach strout"}}
+    <br>
+    <br>
+    {{!#office-stapler action="pressed" as |item|}}
+    {{#office-stapler pressed=(action "pressed") as |item|}}
+      Favorite: {{item.mynumber}}<br>
+      Color: {{item.color}}<br>
+      Nuber of the Staples: {{item.staples}}<br>
+      <b>Inside Component</b><br>
+    {{/office-stapler}}
+    <h3>Second Exam</h3>
+    {{#office-suplies action="pressed" as |office|}}
+      {{!office.stapler}}<br>
+      {{#office.stapler pressed=(action "pressed") as |item|}}
+        <b>{{item.mynumber}}</b><br>
+        <b>{{item.color}}</b><br>
+      {{/office.stapler}}
+      {{office.chair}}<br>
+    {{/office-suplies}}
+  </div>
+  <div class="col-xs-6 options text-left">
+    <h4>Descriptions</h4>
+    <p>
+      Ember Drag-n-Drop Demo - <a href="http://emberjs.com">Please take it</a>
+    </p>
+    {{draggable-demo name="Draggable #1" id="draggable-demo"}}
+    <br>
+    {{draggable-demo name="Draggable #2"}}
+    <br>
+    {{droppable-demo name="Droppable #1"}}
+    <br>
+  </div>
+</div>
+<div class="inspiration text-center">
+  <p>
+    Inspired by <a href="https://github.com/codrops/SidebarTransitions">Sidebar Transitions</a> by Codrops
+    {{my-helper "Created by" "Oleg G.Kapranov"}}
+    {{button-click text="Click OK to delete your account."}}
+  </p>
+</div>

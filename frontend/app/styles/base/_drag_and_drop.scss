@@ -1,0 +1,46 @@
+.draggable-demo {
+  width: 200px;
+  height:115px;
+  border: 1px solid black;
+  background:magenta;
+  padding: 10px;
+}
+
+.draggable-demo.is-dragging {
+  border: 1px dotted black;
+  background-color:lightgreen;
+}
+
+#draggable-demo {
+  position: absolute;
+  width: 200px;
+  height: 115px;
+  background: blue;
+  border-radius: 4px;
+  left: 0;
+}
+
+#draggable-demo.is-dragging {
+  border: 1px dotted black;
+  background:lightblue;
+  left: 0;
+}
+
+.droppable-demo {
+  width: 500px;
+  height: 120px;
+  padding: 15px;
+  background-color: lightblue;
+  border: 1px solid black;
+}
+
+.droppable-demo.is-drop-over {
+  border: 2px dotted black;
+}
+
+.color {
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  border: 1px solid black;
+}

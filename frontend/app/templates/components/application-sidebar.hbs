@@ -1,0 +1,31 @@
+<section class="sidebar">
+  <div class="user-panel">
+    <div class="pull-left image">
+      {{gravatar-image email="lugatex@yahoo.com" alt="Avatar" size="35"}}
+    </div>
+    <div class="pull-left info">
+      <p>Oleg G.Kapranov</p>
+      <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+    </div>
+  </div>
+
+  <form action="#" method="get" class="sidebar-form">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search..."/>
+      <span class="input-group-btn">
+      <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+      </span>
+    </div>
+  </form>
+
+  <ul class="sidebar-menu">
+    <li class="header">MAIN NAVIGATION</li>
+    <li>{{#link-to 'admin-lte'}}<i class="fa fa-sitemap"></i><span>AdminLTE</span>{{/link-to}}</li>
+    <li>{{#link-to 'dashboard'}}<i class="fa fa-th-large"></i><span>Dashboard</span>{{/link-to}}</li>
+    <li>{{#link-to 'users'}}<i class="fa fa-user-circle-o"></i><span>Users</span>{{/link-to}}</li>
+    <li>{{#link-to 'contact'}}<i class="fa fa-edit"></i><span>Contact</span>{{/link-to}}</li>
+    <li>{{#link-to 'payment'}}<i class="fa fa-vcard-o"></i><span>Payment</span>{{/link-to}}</li>
+    <li>{{#link-to 'engine'}}<i class="fa fa-book"></i><span>Engine</span>{{/link-to}}</li>
+    <li>{{#link-to 'about'}}<i class="fa fa-book"></i><span>About</span>{{/link-to}}</li>
+  </ul>
+</section>

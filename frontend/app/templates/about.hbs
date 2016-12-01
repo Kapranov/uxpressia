@@ -1,0 +1,33 @@
+<div class="menu-top clear-both text-center">
+  <h1>About Page</h1>
+</div>
+<div class="container">
+  <div class="animated fadeInRight">
+    <div class="inspiration text-center">
+      {{#about-box
+        email="lugatex@yahoo.com"
+        name="Oleg G.Kapranov"
+        image="../assets/images/cow.png"}}Ruby vs. Ember.js{{/about-box}}
+      {{spectrum-color-picker
+          color=teamColor
+          preferredFormat="hex"
+          showPalette=true
+          showInput=true
+          showInitial=true
+          showAlpha=true}}
+      <button {{action "toggleModal"}}>Toggle Modal</button>
+      {{#if isShowingModal}}
+        {{#modal-dialog close="toggleModal"
+                        targetAttachment='none'
+                        targetAttachment="center"
+                        container-class='custom-styles-modal-container'
+                        overlay-class='custom-styles-modal'}}
+          <h1>Stop! Modal Time!</h1>
+          <p>Custom Styles</p>
+          <button {{action 'toggleModal'}}>Close</button>
+        {{/modal-dialog}}
+      {{/if}}
+      {{textarea value=code id='code'disabled=hasItems}}
+    </div>
+  </div>
+</div>

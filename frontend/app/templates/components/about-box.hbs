@@ -1,0 +1,13 @@
+<div {{action "over" on="mouseEnter"}}>
+  <div {{action "out" on="mouseLeave"}}>
+    {{#if overDiv}}
+      <a class="cow-message right" href="http://molokija.com" target="_blank">hi dude! ...</a>
+    {{/if}}
+    <img class="img-circle img-responsive img-center" style="display:inline" src={{image}} alt="molokija.com">
+    <h4 class="about_box_text">{{name}}
+      <br>
+      <small>{{yield}}</small>
+      <small> - {{email}}</small>
+    </h4>
+  </div>
+</div>

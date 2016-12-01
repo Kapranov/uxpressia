@@ -1,0 +1,30 @@
+source 'https://rubygems.org'
+
+# ruby File.read('.ruby-version').strip
+
+gem 'rails',                    '~> 5.0.0.1'
+gem 'sqlite3'
+gem 'puma',                     '~> 3.6'
+gem 'active_model_serializers', '0.10.3'
+gem 'rack-cors'
+gem 'rack-attack'
+gem 'figaro'
+gem 'ember-cli-rails'
+gem 'fastimage'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'shrine'
+
+group :development do
+  gem 'faker'
+  gem 'populator'
+end
+
+group :development, :test do
+  gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

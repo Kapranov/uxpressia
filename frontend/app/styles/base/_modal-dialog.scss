@@ -1,0 +1,17 @@
+$theme-color:#43374c;
+
+.custom-styles-modal {
+  background-color: rgba($theme-color, .75);
+}
+
+.custom-styles-modal-container {
+  background:#9e9fe6;
+  color: #000;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 400px;
+  h1 {
+    color: $theme-color;
+  }
+}

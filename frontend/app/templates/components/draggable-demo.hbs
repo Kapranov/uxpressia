@@ -1,0 +1,15 @@
+<div class="color" style={{backgroundColorStyle}}>
+Name: <em>{{name}}{{test}}{{!newTest}}</em>
+  <br>
+  {{make-bold "Your total is"}} {{format-currency 350 sign="£"}}
+  <br>
+  {{#if isDragging}}
+    What a drag?
+  {{else}}
+    I am draggable...!
+  {{/if}}
+  <br>
+  {{#if wasDropped}}
+    dropped  <em>{{name}}</em>
+  {{/if}}
+</div>

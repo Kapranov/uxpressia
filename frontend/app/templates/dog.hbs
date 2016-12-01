@@ -1,0 +1,19 @@
+<div class="menu-top clear-both text-center">
+  <h1>Widgets</h1>
+</div>
+<div class="container">
+  <div class="col-xs-2 animations text-right">
+  </div>
+  <div class="col-xs-8 options">
+    <ul class="list-unstyled">
+      {{#each dogs as |dog|}}
+        {{dog-card dog=dog}}
+      {{/each}}
+      {{!#each item in model}}
+      {{!dog-card item=item}}
+      {{!/each}}
+    </ul>
+  </div>
+  <div class="col-xs-2 options text-left">
+  </div>
+</div>

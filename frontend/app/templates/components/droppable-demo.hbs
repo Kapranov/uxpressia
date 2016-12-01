@@ -1,0 +1,11 @@
+<h4>Name: <em>{{name}}</em></h4>
+I'm ready for droppable! please insert something ...
+<br>
+{{#if isDropOver}}
+  <b style="color:red">Something is hovering over me!</b>
+{{/if}}
+{{#if didReceiveDrop}}
+  <b style="color:green">
+    Something was <em>{{!draggedName}}</em> dropped on me.
+  </b>
+{{/if}}

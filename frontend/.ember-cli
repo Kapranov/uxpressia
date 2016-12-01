@@ -1,0 +1,9 @@
+{
+  "liveReload": true,
+  "watcher": "polling",
+  "disableAnalytics": false,
+  "ssl": false
+  // "ssl-key": "path/to/server.key",
+  // "ssl-cert": "path/to/server.crt,
+  // "proxy": "http://localhost:3000"
+}
