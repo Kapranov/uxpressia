@@ -1,18 +1,19 @@
-html, body, p {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
 .padding {
   padding: 20px;
 }
 
+.padding-header {
+  padding-left: 100px;
+  padding-top:20px;
+}
+
 .Application {
-  height: 73vh;
+  /* height: 73vh; */
+  height: auto;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   color: white;
+  /* overflow:auto; */
 
   &__header {
     flex: 0 0 60px;
@@ -26,12 +27,12 @@ html, body, p {
   }
 
   &__left-panel {
-    flex: 0 0 30%;
+    flex: 0 0 20%;
     background: #444;
   }
 
   &__center-panel {
-    flex: 0 0 70%;
+    flex: 0 0 80%;
     background: #666;
     display: flex;
     flex-direction: column;
@@ -43,7 +44,16 @@ html, body, p {
   &__center-panel-body {
     background: #bbb;
     flex: 1 1 auto;
+    height: 75vh;
     overflow: scroll;
+    /* overflow-y: scroll; */
+  }
+  &__center-panel-body-content {
+    background:#677177;
+    padding: 20px;
+    color:#fff;
+    border:3px solid gray;
+    border-radius:10px;
   }
   &__center-panel-footer {
     flex: 0 0 60px;
