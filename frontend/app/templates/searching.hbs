@@ -1,0 +1,33 @@
+<div class="menu-top clear-both text-center">
+  <h1>Searching Page</h1>
+</div>
+<div class="container">
+  <div class="col-xs-6 animations text-left">
+    <hr>
+    {{power-names}}
+    <hr>
+    {{power-countries}}
+    <hr>
+    {{power-multiple}}
+    <hr>
+    {{power-groups}}
+  </div>
+  <div class="col-xs-6 animations text-right">
+    <hr>
+    {{#power-select search=(action "searchRepo")
+                    selected=selected
+                    onchange=(action (mut selected))
+                    as |repo|}}
+                    {{repo.full_name}}
+    {{/power-select}}
+    (It might fail if the API limit is exceeded)
+    <hr>
+    <hr>
+  </div>
+</div>
+<div class="inspiration text-center">
+  <p>
+    Inspired by <a href="https://github.com/codrops/SidebarTransitions">Sidebar Transitions</a> by Codrops
+    {{my-helper "Created by" "Oleg G.Kapranov"}}
+  </p>
+</div>

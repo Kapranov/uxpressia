@@ -28,6 +28,7 @@ Router.map(function() {
   // });
   this.route('engine');
   this.route('flexbox');
+  this.route('searching');
 });
 
 export default Router;
