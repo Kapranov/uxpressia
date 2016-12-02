@@ -14,14 +14,15 @@
   </div>
   <div class="col-xs-6 animations text-right">
     <hr>
-    {{#power-select search=(action "searchRepo")
-                    selected=selected
-                    onchange=(action (mut selected))
-                    as |repo|}}
-                    {{repo.full_name}}
+    {{#power-select
+      search=(action "searchRepo")
+      selected=selected
+      onchange=(action (mut selected))
+      as |repo|
+    }}
+      {{repo.full_name}}
     {{/power-select}}
     (It might fail if the API limit is exceeded)
-    <hr>
     <hr>
   </div>
 </div>
