@@ -1,22 +1,22 @@
 {
   "name": "frontend",
   "dependencies": {
-    "ember": "~2.9.1",
+    "ember": "~2.10.0",
     "ember-cli-shims": "0.1.3",
     "animate.css": "^3.5.2",
     "pace": "^1.0.2",
-    "metisMenu": "^2.5.2",
+    "metisMenu": "^2.6.1",
     "spectrum": "^1.8.0",
-    "blueimp-md5": "^2.5.0",
-    "interact": "1.2.5",
+    "blueimp-md5": "^2.6.0",
+    "interact": "1.2.7",
     "jquery-simulate": "1.0.1",
-    "lodash": "3.10.0",
+    "lodash": "4.17.2",
     "font-awesome": "~4.7.0",
     "admin-lte": "~2.3.8",
-    "card": "~2.0.3",
+    "card": "~2.0.6",
     "annotator": "https://github.com/openannotation/annotator.git#v1.2.10",
     "ember-droplet": "^3.1.0",
-    "jquery-slimscroll": "~1.3.3",
+    "jquery-slimscroll": "~1.3.8",
     "add-to-homescreen": "~3.2.3"
   }
 }
